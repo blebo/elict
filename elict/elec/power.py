@@ -30,7 +30,7 @@ def power_3ph_aprnt(Voltage_LL, Current_L):
 
     :param Voltage_LL: 3 Phase Voltage, Line-Line (V)
     :param Current_L: Line Current (A)
-    :returns power_apparent: Apparent Power (W)
+    :returns power_apparent: Apparent Power (VA)
     """
     power_apparent = math.sqrt(3) * Voltage_LL * Current_L
     return power_apparent
@@ -41,7 +41,7 @@ def power_3ph_aprnt_alt(Voltage_PN, Current_L):
 
     :param Voltage_PN: 3 Phase Voltage, Phase-Neutral (V)
     :param Current_L: Line Current (A)
-    :returns power_apparent: Apparent Power (W)
+    :returns power_apparent: Apparent Power (VA)
     """
     power_apparent = 3 * Voltage_PN * Current_L
     return power_apparent
