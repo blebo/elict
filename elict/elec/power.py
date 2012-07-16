@@ -92,6 +92,52 @@ def power_AC_3ph_aprnt_alt(Voltage_PN, Current_L):
     power_apparent = 3 * Voltage_PN * Current_L
     return power_apparent
 
+def power_AC_1ph_real(Voltage_PN, Current_L):
+    """
+    Calculate single phase AC power (real).
+
+    :param Voltage_PN: Single Phase AC Voltage, Phase-Neutral (V)
+    :type float
+    :param Current_L: Line Current (A)
+    :type float
+    :param power_factor: Power Factor
+    :type float
+    :returns power_real: Real Power (W)
+    :rtype float
+    """
+    power_real = Voltage_PN * Current_L * power_factor
+    return power_real
+
+def power_AC_1ph_rctv(Voltage_PN, Current_L, power_factor):
+    """
+    Calculate single phase AC power (reactive).
+
+    :param Voltage_PN: Single Phase AC Voltage, Phase-Neutral (V)
+    :type float
+    :param Current_L: Line Current (A)
+    :type float
+    :param power_factor: Power Factor
+    :type float
+    :returns power_reactive: Reactive Power (VAr)
+    :rtype float
+    """
+    power_reactive = Voltage_PN * Current_L * math.sin(math.acos(power_factor))
+    return power_reactive
+
+def power_AC_1ph_aprnt(Voltage_PN, Current_L):
+    """
+    Calculate single phase AC power (apparent).
+
+    :param Voltage_PN: Single Phase AC Voltage, Phase-Neutral (V)
+    :type float
+    :param Current_L: Line Current (A)
+    :type float
+    :returns power_apparent: Apparent Power (VA)
+    :rtype float
+    """
+    power_apparent = Voltage_PN * Current_L
+    return power_apparent
+
 def power_DC(Voltage, Current):
     """
     Calculate DC power.
